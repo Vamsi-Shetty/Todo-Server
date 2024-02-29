@@ -1,9 +1,16 @@
 const express = require('express');
 const app = express();
+const cors = require('cors')
 require('dotenv').config();
 
+app.use(cors());
+
 app.get('/test', (req, res) => {
-    res.send("hi there");
+    res.send('<h2>Test</h2>');
+})
+
+app.get('/', (req, res) => {
+    res.send('<h2>Home Page</h2>')
 })
 
 app.get('/login', (req, res) => {
